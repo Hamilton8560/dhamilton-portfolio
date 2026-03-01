@@ -120,19 +120,6 @@ export function Hero() {
     <section ref={containerRef} className="relative">
       <LampContainer className="min-h-screen pt-32 md:pt-40">
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          {/* Pre-header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 2 }}
-            className="mb-6"
-          >
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lime-400/10 border border-lime-400/20 text-lime-400 text-sm font-mono">
-              <span className="w-2 h-2 rounded-full bg-lime-400 animate-pulse" />
-              Available for projects
-            </span>
-          </motion.div>
-
           {/* Main headline with scramble effect */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white leading-[0.95] tracking-tight">
             <div className="overflow-hidden">
