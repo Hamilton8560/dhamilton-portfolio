@@ -1,21 +1,33 @@
 import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
-import { About } from "@/components/about"
-import { Experience } from "@/components/experience"
+import { Pricing } from "@/components/pricing"
+import { Services } from "@/components/services"
+import { SplineAIShowcase } from "@/components/spline-ai-showcase"
+import { Stats } from "@/components/stats"
+import { Freehold } from "@/components/freehold"
 import { Projects } from "@/components/projects"
-import { Contact } from "@/components/contact"
+import { CareerJourney } from "@/components/career-journey"
+import { About } from "@/components/about"
+import { CTABanner } from "@/components/cta-banner"
 import { Footer } from "@/components/footer"
+import { ChatWidget } from "@/components/ui/chat-widget"
 
 export default function Home() {
   return (
     <main>
       <Navbar />
       <Hero />
-      <About />
-      <Experience />
+      <Pricing />
+      <Services />
+      <SplineAIShowcase />
+      <Stats />
+      <Freehold />
       <Projects />
-      <Contact />
+      <CareerJourney />
+      <About />
+      <CTABanner />
       <Footer />
+      <ChatWidget />
     </main>
   )
 }

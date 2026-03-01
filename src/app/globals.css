@@ -77,6 +77,21 @@
   }
 }
 
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%,-40%) scale(1);
+  }
+}
+
+.animate-spotlight {
+  animation: spotlight 2s ease-out forwards;
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -158,11 +173,100 @@
   }
 }
 
+/* Aurora background */
+.aurora-container {
+  filter: blur(80px) saturate(1.5);
+}
+
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.aurora-blob-1 {
+  width: 40%;
+  height: 40%;
+  top: -10%;
+  left: 10%;
+  background: radial-gradient(circle, rgba(163, 230, 53, 0.3) 0%, transparent 70%);
+  animation: aurora-drift-1 8s ease-in-out infinite;
+}
+
+.aurora-blob-2 {
+  width: 50%;
+  height: 50%;
+  top: 20%;
+  right: -10%;
+  background: radial-gradient(circle, rgba(132, 204, 22, 0.2) 0%, transparent 70%);
+  animation: aurora-drift-2 10s ease-in-out infinite;
+}
+
+.aurora-blob-3 {
+  width: 35%;
+  height: 35%;
+  bottom: -5%;
+  left: 30%;
+  background: radial-gradient(circle, rgba(163, 230, 53, 0.25) 0%, transparent 70%);
+  animation: aurora-drift-3 12s ease-in-out infinite;
+}
+
+.aurora-blob-4 {
+  width: 30%;
+  height: 30%;
+  top: 40%;
+  left: -5%;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.15) 0%, transparent 70%);
+  animation: aurora-drift-4 9s ease-in-out infinite;
+}
+
+@keyframes aurora-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, 20px) scale(1.1); }
+  66% { transform: translate(-20px, 30px) scale(0.9); }
+}
+
+@keyframes aurora-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-40px, -20px) scale(1.15); }
+  66% { transform: translate(20px, -30px) scale(0.95); }
+}
+
+@keyframes aurora-drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, -30px) scale(1.1); }
+  66% { transform: translate(-30px, -20px) scale(1.05); }
+}
+
+@keyframes aurora-drift-4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, 20px) scale(1.2); }
+}
+
+/* Blinking cursor for AI dashboard typing effect */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 0.8s step-end infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in-up 0.3s ease-out both;
+}
+
 /* Custom utility classes */
 @layer utilities {
   .text-glow-lime {
     text-shadow: 0 0 20px rgba(163, 230, 53, 0.5),
       0 0 40px rgba(163, 230, 53, 0.3);
+  }
+
+  .text-glow-lime-strong {
+    text-shadow: 0 0 30px rgba(163, 230, 53, 0.6),
+      0 0 60px rgba(163, 230, 53, 0.4),
+      0 0 100px rgba(163, 230, 53, 0.2);
   }
 
   .glow-border {
@@ -172,5 +276,26 @@
   .glow-border:hover {
     box-shadow: 0 0 20px rgba(163, 230, 53, 0.4),
       0 0 40px rgba(163, 230, 53, 0.2);
+  }
+
+  .glass {
+    background: rgba(24, 24, 27, 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(163, 230, 53, 0.1);
+  }
+
+  .glass-card {
+    background: rgba(24, 24, 27, 0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(63, 63, 70, 0.5);
+    transition: all 0.3s ease;
+  }
+
+  .glass-card:hover {
+    background: rgba(24, 24, 27, 0.6);
+    border-color: rgba(163, 230, 53, 0.3);
+    box-shadow: 0 0 30px rgba(163, 230, 53, 0.1),
+      0 8px 32px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px);
   }
 }

@@ -9,19 +9,48 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Frontend Development",
     icon: "Code2",
-    description: "Extensive experience in building responsive, user-friendly web applications with modern JavaScript frameworks and libraries.",
-    skills: ["React", "Angular", "TypeScript", "HTML5/CSS3", "Tailwind CSS", "Next.js", "Redux", "Material UI"]
+    description:
+      "Building responsive, user-friendly web applications with modern JavaScript frameworks.",
+    skills: [
+      "React",
+      "Angular",
+      "TypeScript",
+      "JavaScript",
+      "Next.js",
+      "HTML/CSS",
+      "Tailwind CSS",
+    ],
   },
   {
-    title: "Backend Development",
+    title: "Backend & AI",
     icon: "Server",
-    description: "Strong foundation in server-side programming, API development, and database management.",
-    skills: ["Node.js", "Python", "C#", "Express", "Django", "Laravel", "RESTful APIs", "GraphQL"]
+    description:
+      "Server-side development, API design, and AI/ML pipeline engineering.",
+    skills: [
+      "Node.js",
+      "NestJS",
+      "Python",
+      "C#",
+      "Django",
+      "Flask",
+      ".NET",
+      "scikit-learn",
+    ],
   },
   {
-    title: "Database & DevOps",
+    title: "Data & Infrastructure",
     icon: "Wrench",
-    description: "Experience with various database systems and modern DevOps practices.",
-    skills: ["MongoDB", "PostgreSQL", "MySQL", "Docker", "AWS", "CI/CD", "Git", "Linux"]
-  }
+    description:
+      "Database management, server infrastructure, and deployment pipelines.",
+    skills: [
+      "MySQL",
+      "MongoDB",
+      "PostgreSQL",
+      "SQL Server",
+      "CI/CD",
+      "On-Prem Servers",
+      "RESTful APIs",
+      "Git",
+    ],
+  },
 ]
