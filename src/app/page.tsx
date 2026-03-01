@@ -11,23 +11,26 @@ import { About } from "@/components/about"
 import { CTABanner } from "@/components/cta-banner"
 import { Footer } from "@/components/footer"
 import { ChatWidget } from "@/components/ui/chat-widget"
+import { LoadingScreen } from "@/components/loading-screen"
 
 export default function Home() {
   return (
-    <main>
-      <Navbar />
-      <Hero />
-      <Pricing />
-      <Services />
-      <SplineAIShowcase />
-      <Stats />
-      <Freehold />
-      <Projects />
-      <CareerJourney />
-      <About />
-      <CTABanner />
-      <Footer />
-      <ChatWidget />
-    </main>
+    <LoadingScreen>
+      <main>
+        <Navbar />
+        <Hero />
+        <Pricing />
+        <Services />
+        <SplineAIShowcase />
+        <Stats />
+        <Freehold />
+        <Projects />
+        <CareerJourney />
+        <About />
+        <CTABanner />
+        <Footer />
+        <ChatWidget />
+      </main>
+    </LoadingScreen>
   )
 }
