@@ -29,17 +29,21 @@ export function useGsapFadeInUp(
   useGSAP(() => {
     if (!ref.current) return
 
-    gsap.from(ref.current, {
-      opacity: 0,
-      y,
-      duration,
-      ease,
-      scrollTrigger: {
-        trigger: ref.current,
-        start,
-        toggleActions,
-      },
-    })
+    gsap.fromTo(
+      ref.current,
+      { opacity: 0, y },
+      {
+        opacity: 1,
+        y: 0,
+        duration,
+        ease,
+        scrollTrigger: {
+          trigger: ref.current,
+          start,
+          toggleActions,
+        },
+      }
+    )
   }, { scope: ref, dependencies: [] })
 }
 
@@ -63,17 +67,21 @@ export function useGsapStagger(
     const children = containerRef.current.querySelectorAll(childSelector)
     if (children.length === 0) return
 
-    gsap.from(children, {
-      opacity: 0,
-      y,
-      duration,
-      ease,
-      stagger,
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start,
-        toggleActions,
-      },
-    })
+    gsap.fromTo(
+      children,
+      { opacity: 0, y },
+      {
+        opacity: 1,
+        y: 0,
+        duration,
+        ease,
+        stagger,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start,
+          toggleActions,
+        },
+      }
+    )
   }, { scope: containerRef, dependencies: [] })
 }
