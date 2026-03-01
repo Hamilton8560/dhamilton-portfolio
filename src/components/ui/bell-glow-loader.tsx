@@ -257,8 +257,9 @@ function BellLoader({
         }
         .bell-base:nth-of-type(3) { filter: brightness(3) blur(1em); scale: 0.74 0.84; translate: 0 -11em; }
 
-        .shadow-l1 { display: none; }
-        .shadow-l2 { display: none; }
+        .shadow-l1 { width: 30em; height: 42em; border-radius: 50%; rotate: 12deg; translate: -3em -6em; filter: blur(2em); background: #797a80; }
+        .shadow-l2 { width: 130%; height: 90%; filter: blur(5em); translate: -6em 9em; }
+        .shadow-l2::before { content: ''; width: 68%; height: 64%; border-radius: 50%; rotate: -54deg; translate: -8em 2em; background: #000; display: block; }
 
         .glow { width: 100%; height: 100%; filter: brightness(2) blur(2em); }
         .glow::before {
