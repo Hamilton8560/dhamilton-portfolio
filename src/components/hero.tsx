@@ -5,50 +5,52 @@ import { motion } from "framer-motion"
 import { Github, Linkedin, Mail, ArrowRight, Calendar } from "lucide-react"
 import { socials } from "@/data/socials"
 import { LampContainer } from "@/components/ui/lamp"
+import { useLoadingDone } from "@/components/loading-screen"
 
 // Scramble text component - characters scramble then resolve
 function ScrambleText({
   text,
   className,
-  delay = 0
+  delay = 0,
+  active = true,
 }: {
   text: string
   className?: string
   delay?: number
+  active?: boolean
 }) {
   const [displayText, setDisplayText] = useState("")
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*"
+  const startedRef = useRef(false)
 
   useEffect(() => {
-    let iteration = 0
-    const originalText = text
-    const interval = setInterval(() => {
-      setDisplayText(
-        originalText
-          .split("")
-          .map((char, index) => {
-            if (char === " ") return " "
-            if (index < iteration) return originalText[index]
-            return chars[Math.floor(Math.random() * chars.length)]
-          })
-          .join("")
-      )
-      iteration += 1 / 2
-      if (iteration >= originalText.length) {
-        clearInterval(interval)
-        setDisplayText(originalText)
-      }
-    }, 30)
+    if (!active || startedRef.current) return
+    startedRef.current = true
 
     const timeout = setTimeout(() => {
-      interval
+      let iteration = 0
+      const originalText = text
+      const interval = setInterval(() => {
+        setDisplayText(
+          originalText
+            .split("")
+            .map((char, index) => {
+              if (char === " ") return " "
+              if (index < iteration) return originalText[index]
+              return chars[Math.floor(Math.random() * chars.length)]
+            })
+            .join("")
+        )
+        iteration += 1 / 2
+        if (iteration >= originalText.length) {
+          clearInterval(interval)
+          setDisplayText(originalText)
+        }
+      }, 30)
     }, delay * 1000)
 
-    return () => {
-      clearInterval(interval)
-      clearTimeout(timeout)
-    }
-  }, [text, delay])
+    return () => clearTimeout(timeout)
+  }, [active, text, delay])
 
   return <span className={className}>{displayText || text.split("").map(() => " ").join("")}</span>
 }
@@ -56,15 +58,18 @@ function ScrambleText({
 // Cycling words that rotate through options
 function CycleWord({
   words,
-  className
+  className,
+  active = true,
 }: {
   words: string[]
   className?: string
+  active?: boolean
 }) {
   const [index, setIndex] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
 
   useEffect(() => {
+    if (!active) return
     const interval = setInterval(() => {
       setIsAnimating(true)
       setTimeout(() => {
@@ -74,7 +79,7 @@ function CycleWord({
     }, 2500)
 
     return () => clearInterval(interval)
-  }, [words.length])
+  }, [words.length, active])
 
   return (
     <span className={`inline-block min-w-[200px] ${className}`}>
@@ -108,13 +113,22 @@ function Cursor() {
 
 export function Hero() {
   const containerRef = useRef<HTMLElement>(null)
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const ready = useLoadingDone()
 
   const locationWords = ["oil fields", "gym floors", "factory floors", "trucking yards", "wellheads"]
+
+  // Delays relative to when ready becomes true (after loader fades out)
+  // Lamp takes ~2s to animate, then text appears
+  const d = {
+    h1a: 2.0,
+    h1b: 2.3,
+    h1c: 2.6,
+    subtitle: 3.2,
+    creds: 3.4,
+    socials: 3.6,
+    cta: 3.8,
+    scroll: 4.2,
+  }
 
   return (
     <section ref={containerRef} className="relative">
@@ -125,41 +139,29 @@ export function Hero() {
             <div className="overflow-hidden">
               <motion.div
                 initial={{ y: 100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 2.2 }}
+                animate={ready ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
+                transition={{ duration: 0.8, delay: d.h1a }}
               >
-                {mounted ? (
-                  <ScrambleText text="I BUILD SOFTWARE" delay={2.3} />
-                ) : (
-                  "I BUILD SOFTWARE"
-                )}
+                <ScrambleText text="I BUILD SOFTWARE" delay={d.h1a + 0.1} active={ready} />
               </motion.div>
             </div>
             <div className="overflow-hidden mt-2">
               <motion.div
                 initial={{ y: 100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 2.5 }}
+                animate={ready ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
+                transition={{ duration: 0.8, delay: d.h1b }}
               >
-                {mounted ? (
-                  <ScrambleText text="THAT POWERS" delay={2.6} />
-                ) : (
-                  "THAT POWERS"
-                )}
+                <ScrambleText text="THAT POWERS" delay={d.h1b + 0.1} active={ready} />
               </motion.div>
             </div>
             <div className="overflow-hidden mt-2">
               <motion.div
                 initial={{ y: 100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 2.8 }}
+                animate={ready ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
+                transition={{ duration: 0.8, delay: d.h1c }}
                 className="text-lime-400"
               >
-                {mounted ? (
-                  <ScrambleText text="REAL BUSINESSES" delay={2.9} />
-                ) : (
-                  "REAL BUSINESSES"
-                )}
+                <ScrambleText text="REAL BUSINESSES" delay={d.h1c + 0.1} active={ready} />
               </motion.div>
             </div>
           </h1>
@@ -167,8 +169,8 @@ export function Hero() {
           {/* Animated subtitle with cycling words */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 3.4 }}
+            animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: d.subtitle }}
             className="mt-8"
           >
             <h2 className="text-lg sm:text-xl md:text-2xl text-zinc-400 font-light">
@@ -176,6 +178,7 @@ export function Hero() {
               <CycleWord
                 words={locationWords}
                 className="font-medium text-white"
+                active={ready}
               />
               {" "}to code — I ship full-stack platforms for{" "}
               <span className="text-white font-medium">blue collar</span> &{" "}
@@ -187,8 +190,8 @@ export function Hero() {
           {/* Credentials bar */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 3.6 }}
+            animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: d.creds }}
             className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-zinc-500 font-mono"
           >
             <span className="flex items-center gap-2">
@@ -209,8 +212,8 @@ export function Hero() {
           <motion.div
             className="mt-10 flex gap-4 justify-center"
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 3.8 }}
+            animate={ready ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.5, delay: d.socials }}
           >
             {[
               { icon: Github, href: socials.github, label: "GitHub" },
@@ -226,8 +229,8 @@ export function Hero() {
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 3.8 + i * 0.1 }}
+                animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ delay: d.socials + i * 0.1 }}
                 aria-label={social.label}
               >
                 <social.icon className="w-5 h-5" />
@@ -239,8 +242,8 @@ export function Hero() {
           <motion.div
             className="mt-10 flex gap-4 justify-center flex-wrap"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 4.0 }}
+            animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: d.cta }}
           >
             <motion.a
               href={socials.calendly}
@@ -270,8 +273,8 @@ export function Hero() {
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-50"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 4.4 }}
+        animate={ready ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ delay: d.scroll }}
       >
         <span className="text-zinc-600 text-xs uppercase tracking-widest font-mono">Scroll</span>
         <motion.div

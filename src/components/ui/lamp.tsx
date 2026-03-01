@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useLoadingDone } from "@/components/loading-screen";
 
 export const LampContainer = ({
   children,
@@ -10,6 +11,8 @@ export const LampContainer = ({
   children: React.ReactNode;
   className?: string;
 }) => {
+  const ready = useLoadingDone();
+
   return (
     <div
       className={cn(
@@ -21,7 +24,7 @@ export const LampContainer = ({
         {/* Left beam */}
         <motion.div
           initial={{ opacity: 0, width: "8rem" }}
-          animate={{ opacity: 1, width: "30rem" }}
+          animate={ready ? { opacity: 1, width: "30rem" } : { opacity: 0, width: "8rem" }}
           transition={{
             delay: 0.2,
             duration: 1.8,
@@ -38,7 +41,7 @@ export const LampContainer = ({
         {/* Right beam */}
         <motion.div
           initial={{ opacity: 0, width: "8rem" }}
-          animate={{ opacity: 1, width: "30rem" }}
+          animate={ready ? { opacity: 1, width: "30rem" } : { opacity: 0, width: "8rem" }}
           transition={{
             delay: 0.2,
             duration: 1.8,
@@ -57,14 +60,14 @@ export const LampContainer = ({
         {/* Glow orb */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.5 }}
+          animate={ready ? { opacity: 0.5 } : { opacity: 0 }}
           transition={{ delay: 0.8, duration: 1.4, ease: "easeOut" }}
           className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-lime-400 blur-3xl"
         />
         {/* Inner glow */}
         <motion.div
           initial={{ width: "4rem", opacity: 0 }}
-          animate={{ width: "16rem", opacity: 1 }}
+          animate={ready ? { width: "16rem", opacity: 1 } : { width: "4rem", opacity: 0 }}
           transition={{
             delay: 0.6,
             duration: 1.6,
@@ -75,7 +78,7 @@ export const LampContainer = ({
         {/* Horizontal line */}
         <motion.div
           initial={{ width: "8rem", opacity: 0 }}
-          animate={{ width: "30rem", opacity: 1 }}
+          animate={ready ? { width: "30rem", opacity: 1 } : { width: "8rem", opacity: 0 }}
           transition={{
             delay: 0.4,
             duration: 1.8,

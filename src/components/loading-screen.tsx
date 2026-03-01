@@ -1,16 +1,24 @@
 "use client"
 
-import { useState } from "react"
+import { createContext, useContext, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { BellLoader } from "@/components/ui/bell-glow-loader"
 
+const LoadingContext = createContext(false)
+
+/** Returns true once the loading screen has fully faded out */
+export function useLoadingDone() {
+  return useContext(LoadingContext)
+}
+
 export function LoadingScreen({ children }: { children: React.ReactNode }) {
-  const [done, setDone] = useState(false)
+  const [exiting, setExiting] = useState(false)
+  const [ready, setReady] = useState(false)
 
   return (
-    <>
-      <AnimatePresence>
-        {!done && (
+    <LoadingContext.Provider value={ready}>
+      <AnimatePresence onExitComplete={() => setReady(true)}>
+        {!exiting && (
           <motion.div
             key="loader"
             className="fixed inset-0 z-[200] bg-black"
@@ -25,13 +33,13 @@ export function LoadingScreen({ children }: { children: React.ReactNode }) {
               size={360}
               rotationAmplitude={0.5}
               onComplete={() => {
-                setTimeout(() => setDone(true), 400)
+                setTimeout(() => setExiting(true), 400)
               }}
             />
           </motion.div>
         )}
       </AnimatePresence>
       {children}
-    </>
+    </LoadingContext.Provider>
   )
 }
