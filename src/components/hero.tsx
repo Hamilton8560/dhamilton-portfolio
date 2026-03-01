@@ -1,59 +1,11 @@
 "use client"
 
-import { useRef, useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Github, Linkedin, Mail, ArrowRight, Calendar } from "lucide-react"
 import { socials } from "@/data/socials"
 import { LampContainer } from "@/components/ui/lamp"
 import { useLoadingDone } from "@/components/loading-screen"
-
-// Scramble text component - characters scramble then resolve
-function ScrambleText({
-  text,
-  className,
-  delay = 0,
-  active = true,
-}: {
-  text: string
-  className?: string
-  delay?: number
-  active?: boolean
-}) {
-  const [displayText, setDisplayText] = useState("")
-  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*"
-  const startedRef = useRef(false)
-
-  useEffect(() => {
-    if (!active || startedRef.current) return
-    startedRef.current = true
-
-    const timeout = setTimeout(() => {
-      let iteration = 0
-      const originalText = text
-      const interval = setInterval(() => {
-        setDisplayText(
-          originalText
-            .split("")
-            .map((char, index) => {
-              if (char === " ") return " "
-              if (index < iteration) return originalText[index]
-              return chars[Math.floor(Math.random() * chars.length)]
-            })
-            .join("")
-        )
-        iteration += 1 / 2
-        if (iteration >= originalText.length) {
-          clearInterval(interval)
-          setDisplayText(originalText)
-        }
-      }, 30)
-    }, delay * 1000)
-
-    return () => clearTimeout(timeout)
-  }, [active, text, delay])
-
-  return <span className={className}>{displayText || text.split("").map(() => " ").join("")}</span>
-}
 
 // Cycling words that rotate through options
 function CycleWord({
@@ -112,56 +64,55 @@ function Cursor() {
 }
 
 export function Hero() {
-  const containerRef = useRef<HTMLElement>(null)
   const ready = useLoadingDone()
 
   const locationWords = ["oil fields", "gym floors", "factory floors", "trucking yards", "wellheads"]
 
-  // Delays relative to when ready becomes true (after loader fades out)
-  // Lamp takes ~2s to animate, then text appears
+  // Delays relative to when ready becomes true
+  // Lamp takes ~2s, then lines slide up one by one
   const d = {
     h1a: 2.0,
-    h1b: 2.3,
-    h1c: 2.6,
-    subtitle: 3.2,
-    creds: 3.4,
-    socials: 3.6,
-    cta: 3.8,
-    scroll: 4.2,
+    h1b: 2.4,
+    h1c: 2.8,
+    subtitle: 3.4,
+    creds: 3.6,
+    socials: 3.8,
+    cta: 4.0,
+    scroll: 4.4,
   }
 
   return (
-    <section ref={containerRef} className="relative">
+    <section className="relative">
       <LampContainer className="min-h-screen pt-32 md:pt-40">
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          {/* Main headline with scramble effect */}
+          {/* Main headline — smooth slide up line by line */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white leading-[0.95] tracking-tight">
             <div className="overflow-hidden">
               <motion.div
-                initial={{ y: 100, opacity: 0 }}
-                animate={ready ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
-                transition={{ duration: 0.8, delay: d.h1a }}
+                initial={{ y: "100%", opacity: 0 }}
+                animate={ready ? { y: 0, opacity: 1 } : { y: "100%", opacity: 0 }}
+                transition={{ duration: 0.9, delay: d.h1a, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                <ScrambleText text="I BUILD SOFTWARE" delay={d.h1a + 0.1} active={ready} />
+                I BUILD SOFTWARE
               </motion.div>
             </div>
             <div className="overflow-hidden mt-2">
               <motion.div
-                initial={{ y: 100, opacity: 0 }}
-                animate={ready ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
-                transition={{ duration: 0.8, delay: d.h1b }}
+                initial={{ y: "100%", opacity: 0 }}
+                animate={ready ? { y: 0, opacity: 1 } : { y: "100%", opacity: 0 }}
+                transition={{ duration: 0.9, delay: d.h1b, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                <ScrambleText text="THAT POWERS" delay={d.h1b + 0.1} active={ready} />
+                THAT POWERS
               </motion.div>
             </div>
             <div className="overflow-hidden mt-2">
               <motion.div
-                initial={{ y: 100, opacity: 0 }}
-                animate={ready ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
-                transition={{ duration: 0.8, delay: d.h1c }}
+                initial={{ y: "100%", opacity: 0 }}
+                animate={ready ? { y: 0, opacity: 1 } : { y: "100%", opacity: 0 }}
+                transition={{ duration: 0.9, delay: d.h1c, ease: [0.25, 0.1, 0.25, 1] }}
                 className="text-lime-400"
               >
-                <ScrambleText text="REAL BUSINESSES" delay={d.h1c + 0.1} active={ready} />
+                REAL BUSINESSES
               </motion.div>
             </div>
           </h1>
@@ -170,7 +121,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: d.subtitle }}
+            transition={{ duration: 0.7, delay: d.subtitle, ease: "easeOut" }}
             className="mt-8"
           >
             <h2 className="text-lg sm:text-xl md:text-2xl text-zinc-400 font-light">
@@ -191,7 +142,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: d.creds }}
+            transition={{ duration: 0.6, delay: d.creds, ease: "easeOut" }}
             className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-zinc-500 font-mono"
           >
             <span className="flex items-center gap-2">
@@ -213,7 +164,7 @@ export function Hero() {
             className="mt-10 flex gap-4 justify-center"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={ready ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.5, delay: d.socials }}
+            transition={{ duration: 0.5, delay: d.socials, ease: "easeOut" }}
           >
             {[
               { icon: Github, href: socials.github, label: "GitHub" },
@@ -230,7 +181,7 @@ export function Hero() {
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ delay: d.socials + i * 0.1 }}
+                transition={{ delay: d.socials + i * 0.1, ease: "easeOut" }}
                 aria-label={social.label}
               >
                 <social.icon className="w-5 h-5" />
@@ -243,7 +194,7 @@ export function Hero() {
             className="mt-10 flex gap-4 justify-center flex-wrap"
             initial={{ opacity: 0, y: 20 }}
             animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: d.cta }}
+            transition={{ duration: 0.6, delay: d.cta, ease: "easeOut" }}
           >
             <motion.a
               href={socials.calendly}
