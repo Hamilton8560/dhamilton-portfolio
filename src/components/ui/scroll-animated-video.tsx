@@ -616,6 +616,7 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
           display: flex;
           flex-direction: column;
           align-items: center;
+          justify-content: center;
           text-align: center;
           padding: clamp(16px, 4vw, 40px);
           clip-path: inset(100% 0 0 0);
