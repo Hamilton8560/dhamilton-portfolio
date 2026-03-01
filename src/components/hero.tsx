@@ -118,13 +118,13 @@ export function Hero() {
 
   return (
     <section ref={containerRef} className="relative">
-      <LampContainer className="min-h-screen pt-20">
+      <LampContainer className="min-h-screen pt-32 md:pt-40">
         <div className="max-w-5xl mx-auto text-center relative z-10">
           {/* Pre-header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 2 }}
             className="mb-6"
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lime-400/10 border border-lime-400/20 text-lime-400 text-sm font-mono">
@@ -139,10 +139,10 @@ export function Hero() {
               <motion.div
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.8, delay: 2.2 }}
               >
                 {mounted ? (
-                  <ScrambleText text="I BUILD SOFTWARE" delay={0.3} />
+                  <ScrambleText text="I BUILD SOFTWARE" delay={2.3} />
                 ) : (
                   "I BUILD SOFTWARE"
                 )}
@@ -152,10 +152,10 @@ export function Hero() {
               <motion.div
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                transition={{ duration: 0.8, delay: 2.5 }}
               >
                 {mounted ? (
-                  <ScrambleText text="THAT POWERS" delay={0.6} />
+                  <ScrambleText text="THAT POWERS" delay={2.6} />
                 ) : (
                   "THAT POWERS"
                 )}
@@ -165,11 +165,11 @@ export function Hero() {
               <motion.div
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
+                transition={{ duration: 0.8, delay: 2.8 }}
                 className="text-lime-400"
               >
                 {mounted ? (
-                  <ScrambleText text="REAL BUSINESSES" delay={0.9} />
+                  <ScrambleText text="REAL BUSINESSES" delay={2.9} />
                 ) : (
                   "REAL BUSINESSES"
                 )}
@@ -181,7 +181,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
+            transition={{ duration: 0.6, delay: 3.4 }}
             className="mt-8"
           >
             <h2 className="text-lg sm:text-xl md:text-2xl text-zinc-400 font-light">
@@ -201,7 +201,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.4 }}
+            transition={{ duration: 0.6, delay: 3.6 }}
             className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-zinc-500 font-mono"
           >
             <span className="flex items-center gap-2">
@@ -223,7 +223,7 @@ export function Hero() {
             className="mt-10 flex gap-4 justify-center"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 1.6 }}
+            transition={{ duration: 0.5, delay: 3.8 }}
           >
             {[
               { icon: Github, href: socials.github, label: "GitHub" },
@@ -240,7 +240,7 @@ export function Hero() {
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.6 + i * 0.1 }}
+                transition={{ delay: 3.8 + i * 0.1 }}
                 aria-label={social.label}
               >
                 <social.icon className="w-5 h-5" />
@@ -253,7 +253,7 @@ export function Hero() {
             className="mt-10 flex gap-4 justify-center flex-wrap"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.8 }}
+            transition={{ duration: 0.6, delay: 4.0 }}
           >
             <motion.a
               href={socials.calendly}
@@ -284,7 +284,7 @@ export function Hero() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-50"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2.2 }}
+        transition={{ delay: 4.4 }}
       >
         <span className="text-zinc-600 text-xs uppercase tracking-widest font-mono">Scroll</span>
         <motion.div
