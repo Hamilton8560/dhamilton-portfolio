@@ -1,5 +1,7 @@
 "use client"
 
+import type { JSX } from "react"
+
 // SVG Tech Logos - self-contained, no external dependencies
 export const TechLogo = ({ name, className = "w-5 h-5" }: { name: string; className?: string }) => {
   const logos: Record<string, JSX.Element> = {
