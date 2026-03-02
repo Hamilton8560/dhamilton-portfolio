@@ -33,7 +33,7 @@ export function ScrollTimeline({ entries, className }: ScrollTimelineProps) {
         <div className="absolute inset-0 bg-zinc-800" />
         {/* Animated fill */}
         <motion.div
-          className="absolute top-0 left-0 w-full bg-gradient-to-b from-lime-400 via-lime-400 to-transparent origin-top"
+          className="absolute top-0 left-0 w-full bg-gradient-to-b from-neon via-neon to-transparent origin-top"
           style={{ height: heightTransform }}
         />
       </div>
@@ -62,16 +62,16 @@ function TimelineItem({ entry, index }: { entry: TimelineEntry; index: number })
     <div ref={ref} className="relative pl-12 md:pl-20">
       {/* Node dot */}
       <motion.div
-        className="absolute left-4 md:left-8 -translate-x-1/2 w-3 h-3 rounded-full bg-lime-400 border-[3px] border-zinc-950 z-10"
+        className="absolute left-4 md:left-8 -translate-x-1/2 w-3 h-3 rounded-full bg-neon border-[3px] border-zinc-950 z-10"
         style={{ opacity }}
       >
-        <div className="absolute inset-0 rounded-full bg-lime-400 animate-ping opacity-20" />
+        <div className="absolute inset-0 rounded-full bg-neon animate-ping opacity-20" />
       </motion.div>
 
       {/* Content */}
       <motion.div style={{ opacity, y }}>
         {/* Period badge */}
-        <span className="inline-block text-lime-400 font-mono text-sm mb-3 px-3 py-1 bg-lime-400/10 rounded-full border border-lime-400/20">
+        <span className="inline-block text-neon font-mono text-sm mb-3 px-3 py-1 bg-neon/10 rounded-full border border-neon/20">
           {entry.period}
         </span>
 

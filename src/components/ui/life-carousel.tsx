@@ -65,13 +65,13 @@ export function LifeCarousel({ phases, autoAdvance = 4000 }: LifeCarouselProps) 
         {/* Nav arrows */}
         <button
           onClick={(e) => { e.stopPropagation(); prev() }}
-          className="absolute left-3 top-1/2 -translate-y-1/2 z-20 p-1.5 rounded-full bg-zinc-950/60 border border-zinc-700/50 text-white/70 hover:text-lime-400 hover:border-lime-400/40 transition-all backdrop-blur-sm cursor-pointer"
+          className="absolute left-3 top-1/2 -translate-y-1/2 z-20 p-1.5 rounded-full bg-zinc-950/60 border border-zinc-700/50 text-white/70 hover:text-neon hover:border-neon/40 transition-all backdrop-blur-sm cursor-pointer"
         >
           <ChevronLeft className="w-4 h-4" />
         </button>
         <button
           onClick={(e) => { e.stopPropagation(); next() }}
-          className="absolute right-3 top-1/2 -translate-y-1/2 z-20 p-1.5 rounded-full bg-zinc-950/60 border border-zinc-700/50 text-white/70 hover:text-lime-400 hover:border-lime-400/40 transition-all backdrop-blur-sm cursor-pointer"
+          className="absolute right-3 top-1/2 -translate-y-1/2 z-20 p-1.5 rounded-full bg-zinc-950/60 border border-zinc-700/50 text-white/70 hover:text-neon hover:border-neon/40 transition-all backdrop-blur-sm cursor-pointer"
         >
           <ChevronRight className="w-4 h-4" />
         </button>
@@ -107,7 +107,7 @@ export function LifeCarousel({ phases, autoAdvance = 4000 }: LifeCarouselProps) 
               }}
               className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${
                 i === current
-                  ? "bg-lime-400 scale-125"
+                  ? "bg-neon scale-125"
                   : "bg-zinc-700 hover:bg-zinc-500"
               }`}
             />

@@ -285,11 +285,11 @@ function BellLoader({
         .bell-buff-t { background:#fff2; width:72%; height:12%; border-radius:50%; translate:0 16em; filter:blur(1em); }
         .bell-buff { background:linear-gradient(90deg, #000 40%, var(--base-clr) 90%); width:88%; height:20%; border-radius:50% 50% 50% 50% / 50% 50% 30% 30%; translate:0 20em; box-shadow: inset 1em 0 2em -1em #5d819666, inset -1em 0 2em -1em #fff; }
         .bell-btm { width:88%; height:18%; border-radius:50%; translate:0 23em; background:linear-gradient(90deg, #000 40%, var(--base-clr) 90%); }
-        .bell-btm2 { width:74%; height:12%; border-radius:50%; translate:0 24em; background:#a3e635; box-shadow: 0 0 1em .6em #a3e635, -.8em .2em 2em 1em #65a30d, -5.4em -.6em 3em -1em #4d7c0fbb, 6em -.6em 3em -1em #4d7c0fbb, inset 0 30.3em .3em -30em #a3e635, inset 0 -2em 2em -2em #d9f99d, inset 0 -1em 2em 1em #65a30d66; filter:brightness(1); }
+        .bell-btm2 { width:74%; height:12%; border-radius:50%; translate:0 24em; background:#00D4FF; box-shadow: 0 0 1em .6em #00D4FF, -.8em .2em 2em 1em #0088BB, -5.4em -.6em 3em -1em #006699bb, 6em -.6em 3em -1em #006699bb, inset 0 30.3em .3em -30em #00D4FF, inset 0 -2em 2em -2em #99EEFF, inset 0 -1em 2em 1em #0088BB66; filter:brightness(1); }
         .off .bell-btm2 { filter:brightness(.02); }
 
         .bell-ring-container { width:74%; height:24%; border-radius:50% 50% 50% 50% / 25% 25% 0% 0%; translate:0 29.2em; overflow:hidden; }
-        .bell-ring { width:12em; height:12em; background:#a3e635; border-radius:50%; translate:0 -6em; box-shadow: 0 .8em 1em -.3em #d9f99d, inset 0 -6em 4em -4em #65a30d, inset 0 1em 3em 1em #fff4, inset 0 2em 3em 1em #d9f99d, inset 0 100em 0 100em #1a2e05; }
+        .bell-ring { width:12em; height:12em; background:#00D4FF; border-radius:50%; translate:0 -6em; box-shadow: 0 .8em 1em -.3em #99EEFF, inset 0 -6em 4em -4em #0088BB, inset 0 1em 3em 1em #fff4, inset 0 2em 3em 1em #99EEFF, inset 0 100em 0 100em #001A2E; }
         .off .bell-ring { background:#000; box-shadow: 0 .8em 1em -.3em #0000, inset 0 -6em 4em -4em #e3b69500, inset 0 1em 3em 1em #fff0, inset 0 -2em 3em 1em #fff2, inset 0 100em 0 100em #000; }
 
         .bell-rays { mix-blend-mode:soft-light; box-shadow: inset 0 -21em 4em -20em #000; width:100%; height:140%; translate:0 -4em; border-radius:50%; }
@@ -323,8 +323,8 @@ function BellLoader({
           transform: translateX(-50%);
           font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
           font-size: 5em;
-          color: #a3e635;
-          text-shadow: 0 0 8px #a3e63566, 0 0 24px #a3e635aa, 0 0 48px #65a30d66;
+          color: #00D4FF;
+          text-shadow: 0 0 8px #00D4FF66, 0 0 24px #00D4FFaa, 0 0 48px #0088BB66;
           pointer-events: none;
           opacity: 0.95;
           mix-blend-mode: screen;

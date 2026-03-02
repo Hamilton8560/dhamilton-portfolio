@@ -16,13 +16,13 @@ export function Projects() {
       <div className="max-w-6xl mx-auto">
         {/* Section heading */}
         <div className="text-center mb-16">
-          <span className="text-lime-400 font-mono text-sm tracking-widest uppercase">
+          <span className="text-neon font-mono text-sm tracking-widest uppercase">
             Portfolio
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-white mt-3">
             Featured Projects
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-transparent via-lime-400 to-transparent mx-auto mt-6 rounded-full" />
+          <div className="w-20 h-1 bg-gradient-to-r from-transparent via-neon to-transparent mx-auto mt-6 rounded-full" />
         </div>
 
         {/* Projects grid */}
@@ -83,7 +83,7 @@ function ProjectCard({ project }: { project: Project }) {
           href={project.demo}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute top-4 right-4 p-2.5 rounded-full bg-lime-400 text-zinc-950 opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 hover:bg-lime-300 z-10"
+          className="absolute top-4 right-4 p-2.5 rounded-full bg-neon text-zinc-950 opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 hover:bg-neon-hover z-10"
         >
           <ArrowUpRight className="w-4 h-4" />
         </a>
@@ -91,7 +91,7 @@ function ProjectCard({ project }: { project: Project }) {
 
       <div className="p-6">
         {/* Title with hover color */}
-        <h3 className="text-xl font-semibold text-white group-hover:text-lime-400 transition-colors duration-300 mb-2">
+        <h3 className="text-xl font-semibold text-white group-hover:text-neon transition-colors duration-300 mb-2">
           {project.title}
         </h3>
         <p className="text-zinc-400 text-sm mb-4 line-clamp-2 leading-relaxed">
@@ -117,7 +117,7 @@ function ProjectCard({ project }: { project: Project }) {
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-lime-400 hover:text-lime-300 text-sm transition-colors group/link"
+            className="inline-flex items-center gap-1.5 text-neon hover:text-neon-hover text-sm transition-colors group/link"
           >
             <ExternalLink className="w-4 h-4" />
             Live Demo
@@ -128,7 +128,7 @@ function ProjectCard({ project }: { project: Project }) {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-zinc-400 hover:text-lime-400 text-sm transition-colors group/link"
+              className="inline-flex items-center gap-1.5 text-zinc-400 hover:text-neon text-sm transition-colors group/link"
             >
               <Github className="w-4 h-4" />
               GitHub

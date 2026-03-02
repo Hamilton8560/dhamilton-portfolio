@@ -18,7 +18,7 @@ export function Experience() {
                 key={highlight}
                 className="text-zinc-300 text-sm flex items-start gap-3"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-lime-400 mt-2 shrink-0 shadow-[0_0_6px_rgba(163,230,53,0.5)]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-neon mt-2 shrink-0 shadow-[0_0_6px_rgba(0, 212, 255,0.5)]" />
                 {highlight}
               </li>
             ))}
@@ -33,13 +33,13 @@ export function Experience() {
       <div className="max-w-4xl mx-auto">
         {/* Section heading */}
         <div className="text-center mb-20">
-          <span className="text-lime-400 font-mono text-sm tracking-widest uppercase">
+          <span className="text-neon font-mono text-sm tracking-widest uppercase">
             Career Path
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-white mt-3">
             Experience
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-transparent via-lime-400 to-transparent mx-auto mt-6 rounded-full" />
+          <div className="w-20 h-1 bg-gradient-to-r from-transparent via-neon to-transparent mx-auto mt-6 rounded-full" />
         </div>
 
         {/* Scroll-driven timeline */}

@@ -40,7 +40,7 @@ function renderMessageContent(content: string, isUser: boolean) {
           className={`underline underline-offset-2 font-medium ${
             isUser
               ? "text-zinc-950 hover:text-zinc-700"
-              : "text-lime-400 hover:text-lime-300"
+              : "text-neon hover:text-neon-hover"
           } transition-colors`}
         >
           {getFriendlyLabel(part)}
@@ -150,7 +150,7 @@ export function ChatWidget() {
             exit={{ scale: 0, opacity: 0 }}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             onClick={() => setOpen(true)}
-            className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-lime-400 text-zinc-950 shadow-lg shadow-lime-400/20 hover:bg-lime-300 hover:shadow-lime-400/40 hover:scale-110 transition-all duration-300 flex items-center justify-center cursor-pointer"
+            className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-neon text-zinc-950 shadow-lg shadow-neon/20 hover:bg-neon-hover hover:shadow-neon/40 hover:scale-110 transition-all duration-300 flex items-center justify-center cursor-pointer"
             aria-label="Open chat"
           >
             <MessageSquare className="w-6 h-6" />
@@ -171,15 +171,15 @@ export function ChatWidget() {
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 border-b border-zinc-800/80 bg-zinc-950">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-lime-400/10 border border-lime-400/20 flex items-center justify-center">
-                  <Bot className="w-4 h-4 text-lime-400" />
+                <div className="w-8 h-8 rounded-full bg-neon/10 border border-neon/20 flex items-center justify-center">
+                  <Bot className="w-4 h-4 text-neon" />
                 </div>
                 <div>
                   <span className="text-white text-sm font-semibold block leading-tight">
                     David&apos;s AI
                   </span>
-                  <span className="text-lime-400 text-[10px] font-mono flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-lime-400 inline-block animate-pulse" />
+                  <span className="text-neon text-[10px] font-mono flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-neon inline-block animate-pulse" />
                     Online
                   </span>
                 </div>
@@ -203,7 +203,7 @@ export function ChatWidget() {
                   <div
                     className={`max-w-[85%] px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed ${
                       msg.role === "user"
-                        ? "bg-lime-400 text-zinc-950 rounded-br-md"
+                        ? "bg-neon text-zinc-950 rounded-br-md"
                         : "bg-zinc-800/80 text-zinc-200 rounded-bl-md"
                     }`}
                   >
@@ -270,7 +270,7 @@ export function ChatWidget() {
                           .finally(() => setLoading(false))
                       }, 0)
                     }}
-                    className="text-xs px-3 py-1.5 rounded-full border border-zinc-700 text-zinc-400 hover:border-lime-400/40 hover:text-lime-400 transition-colors cursor-pointer"
+                    className="text-xs px-3 py-1.5 rounded-full border border-zinc-700 text-zinc-400 hover:border-neon/40 hover:text-neon transition-colors cursor-pointer"
                   >
                     {q}
                   </button>
@@ -280,7 +280,7 @@ export function ChatWidget() {
 
             {/* Input */}
             <div className="px-3 py-3 border-t border-zinc-800/80 bg-zinc-950">
-              <div className="flex items-center gap-2 bg-zinc-900 rounded-xl px-3 py-2 border border-zinc-800 focus-within:border-lime-400/40 transition-colors">
+              <div className="flex items-center gap-2 bg-zinc-900 rounded-xl px-3 py-2 border border-zinc-800 focus-within:border-neon/40 transition-colors">
                 <input
                   ref={inputRef}
                   type="text"
@@ -294,7 +294,7 @@ export function ChatWidget() {
                 <button
                   onClick={sendMessage}
                   disabled={!input.trim() || loading}
-                  className="w-8 h-8 rounded-lg bg-lime-400 text-zinc-950 flex items-center justify-center hover:bg-lime-300 disabled:opacity-30 disabled:hover:bg-lime-400 transition-all cursor-pointer shrink-0"
+                  className="w-8 h-8 rounded-lg bg-neon text-zinc-950 flex items-center justify-center hover:bg-neon-hover disabled:opacity-30 disabled:hover:bg-neon transition-all cursor-pointer shrink-0"
                   aria-label="Send message"
                 >
                   <Send className="w-3.5 h-3.5" />
@@ -308,7 +308,7 @@ export function ChatWidget() {
                   href="https://calendly.com/davidhamilton473/el-salvador-consultation"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[10px] text-lime-400/60 hover:text-lime-400 transition-colors flex items-center gap-1"
+                  className="text-[10px] text-neon/60 hover:text-neon transition-colors flex items-center gap-1"
                 >
                   Or book directly
                   <ArrowRight className="w-2.5 h-2.5" />

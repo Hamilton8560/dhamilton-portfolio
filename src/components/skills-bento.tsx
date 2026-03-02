@@ -38,8 +38,8 @@ const skillZones: SkillZone[] = [
     title: "Frontend",
     subtitle: "UI/UX Architecture",
     icon: Code2,
-    color: "#a3e635",
-    glowColor: "rgba(163, 230, 53, 0.15)",
+    color: "#00D4FF",
+    glowColor: "rgba(0, 212, 255, 0.15)",
     size: "large",
     floatingIcons: [Sparkles, Zap, Globe],
     skills: [
@@ -321,7 +321,7 @@ function TechMarquee() {
         >
           {[...tools, ...tools].map((tool, i) => (
             <span key={i} className="text-zinc-500 text-sm whitespace-nowrap flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-lime-400/60" />
+              <span className="w-1.5 h-1.5 rounded-full bg-neon/60" />
               {tool}
             </span>
           ))}
@@ -338,7 +338,7 @@ export function SkillsBento() {
         {/* Header */}
         <div className="text-center mb-16">
           <motion.span 
-            className="text-lime-400 font-mono text-sm tracking-widest uppercase inline-flex items-center gap-2"
+            className="text-neon font-mono text-sm tracking-widest uppercase inline-flex items-center gap-2"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -384,9 +384,9 @@ export function SkillsBento() {
         >
           <div className="flex items-center gap-2">
             <div className="flex gap-0.5">
-              <div className="w-1 h-1 rounded-full bg-lime-400" />
-              <div className="w-1 h-1 rounded-full bg-lime-400" />
-              <div className="w-1 h-1 rounded-full bg-lime-400" />
+              <div className="w-1 h-1 rounded-full bg-neon" />
+              <div className="w-1 h-1 rounded-full bg-neon" />
+              <div className="w-1 h-1 rounded-full bg-neon" />
             </div>
             <span>Expert — Daily driver</span>
           </div>

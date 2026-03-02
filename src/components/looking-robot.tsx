@@ -25,7 +25,7 @@ export function LookingRobot() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-3">
             {/* Left eye */}
             <motion.div 
-              className="w-6 h-6 bg-lime-400 rounded-full shadow-[0_0_10px_rgba(163,230,53,0.8)]"
+              className="w-6 h-6 bg-neon rounded-full shadow-[0_0_10px_rgba(0, 212, 255,0.8)]"
               animate={{ 
                 x: [-2, 2, -2],
                 scaleY: [1, 0.3, 1]
@@ -37,7 +37,7 @@ export function LookingRobot() {
             />
             {/* Right eye */}
             <motion.div 
-              className="w-6 h-6 bg-lime-400 rounded-full shadow-[0_0_10px_rgba(163,230,53,0.8)]"
+              className="w-6 h-6 bg-neon rounded-full shadow-[0_0_10px_rgba(0, 212, 255,0.8)]"
               animate={{ 
                 x: [-2, 2, -2],
                 scaleY: [1, 0.3, 1]
@@ -51,7 +51,7 @@ export function LookingRobot() {
           
           {/* Mouth */}
           <motion.div 
-            className="absolute bottom-4 left-1/2 -translate-x-1/2 w-8 h-1 bg-lime-400/50 rounded-full"
+            className="absolute bottom-4 left-1/2 -translate-x-1/2 w-8 h-1 bg-neon/50 rounded-full"
             animate={{ 
               width: [32, 24, 32],
               opacity: [0.5, 0.8, 0.5]
@@ -70,7 +70,7 @@ export function LookingRobot() {
           animate={{ rotate: [-5, 5, -5] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
-          <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-lime-400 rounded-full shadow-[0_0_8px_rgba(163,230,53,0.8)]" />
+          <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-neon rounded-full shadow-[0_0_8px_rgba(0, 212, 255,0.8)]" />
         </motion.div>
         
         {/* Ear pieces */}
@@ -79,7 +79,7 @@ export function LookingRobot() {
       </motion.div>
       
       {/* Glow effect */}
-      <div className="absolute inset-0 bg-lime-400/10 rounded-2xl blur-xl -z-10" />
+      <div className="absolute inset-0 bg-neon/10 rounded-2xl blur-xl -z-10" />
     </div>
   )
 }

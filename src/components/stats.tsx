@@ -62,7 +62,7 @@ export function Stats() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-4xl md:text-5xl font-black text-lime-400 text-glow-lime mb-2">
+                <div className="text-4xl md:text-5xl font-black text-neon text-glow-neon mb-2">
                   <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                 </div>
                 <div className="text-zinc-400 text-sm font-mono uppercase tracking-wider">

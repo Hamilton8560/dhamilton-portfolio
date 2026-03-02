@@ -44,7 +44,7 @@ function CycleWord({
           filter: isAnimating ? "blur(10px)" : "blur(0px)"
         }}
         transition={{ duration: 0.3 }}
-        className="inline-block text-lime-400"
+        className="inline-block text-neon"
       >
         {words[index]}
       </motion.span>
@@ -56,7 +56,7 @@ function CycleWord({
 function Cursor() {
   return (
     <motion.span
-      className="inline-block w-[3px] h-[1em] bg-lime-400 ml-1"
+      className="inline-block w-[3px] h-[1em] bg-neon ml-1"
       animate={{ opacity: [1, 0] }}
       transition={{ duration: 0.8, repeat: Infinity }}
     />
@@ -110,7 +110,7 @@ export function Hero() {
                 initial={{ y: "100%", opacity: 0 }}
                 animate={ready ? { y: 0, opacity: 1 } : { y: "100%", opacity: 0 }}
                 transition={{ duration: 0.9, delay: d.h1c, ease: [0.25, 0.1, 0.25, 1] }}
-                className="text-lime-400"
+                className="text-neon"
               >
                 REAL BUSINESSES
               </motion.div>
@@ -176,7 +176,7 @@ export function Hero() {
                 href={social.href}
                 target={social.label !== "Email" ? "_blank" : undefined}
                 rel={social.label !== "Email" ? "noopener noreferrer" : undefined}
-                className="p-3 rounded-full bg-zinc-900/50 border border-zinc-800 text-zinc-400 hover:text-lime-400 hover:border-lime-400/30 transition-all duration-300"
+                className="p-3 rounded-full bg-zinc-900/50 border border-zinc-800 text-zinc-400 hover:text-neon hover:border-neon/30 transition-all duration-300"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -200,7 +200,7 @@ export function Hero() {
               href={socials.calendly}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 bg-lime-400 text-zinc-950 hover:bg-lime-300 font-semibold px-8 py-4 rounded-full transition-all duration-300"
+              className="group inline-flex items-center gap-2 bg-neon text-zinc-950 hover:bg-neon-hover font-semibold px-8 py-4 rounded-full transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -210,7 +210,7 @@ export function Hero() {
             </motion.a>
             <motion.a
               href="#projects"
-              className="inline-flex items-center gap-2 bg-zinc-900/50 border border-zinc-700 text-white hover:border-lime-400/50 hover:text-lime-400 font-semibold px-8 py-4 rounded-full transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-zinc-900/50 border border-zinc-700 text-white hover:border-neon/50 hover:text-neon font-semibold px-8 py-4 rounded-full transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -222,7 +222,7 @@ export function Hero() {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-50"
+        className="absolute bottom-3 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-50"
         initial={{ opacity: 0 }}
         animate={ready ? { opacity: 1 } : { opacity: 0 }}
         transition={{ delay: d.scroll }}

@@ -66,7 +66,7 @@ export function Navbar() {
           {/* Logo / Name */}
           <button
             onClick={scrollToTop}
-            className="font-bold text-white text-lg cursor-pointer hover:text-lime-400 transition-colors"
+            className="font-bold text-white text-lg cursor-pointer hover:text-neon transition-colors"
           >
             David Hamilton
           </button>
@@ -77,7 +77,7 @@ export function Navbar() {
               href={socials.calendly}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 bg-lime-400 text-zinc-950 hover:bg-lime-300 font-semibold px-5 py-2.5 rounded-full transition-all duration-300 hover:shadow-[var(--shadow-glow-lg)] hover:scale-105 text-sm"
+              className="group inline-flex items-center gap-2 bg-neon text-zinc-950 hover:bg-neon-hover font-semibold px-5 py-2.5 rounded-full transition-all duration-300 hover:shadow-[var(--shadow-glow-lg)] hover:scale-105 text-sm"
             >
               Let&apos;s Talk
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
@@ -109,8 +109,8 @@ export function Navbar() {
           >
             {/* Background effects */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <div className="absolute top-1/4 -left-20 w-64 h-64 bg-lime-400/10 rounded-full blur-[100px]" />
-              <div className="absolute bottom-1/4 -right-20 w-64 h-64 bg-lime-400/5 rounded-full blur-[100px]" />
+              <div className="absolute top-1/4 -left-20 w-64 h-64 bg-neon/10 rounded-full blur-[100px]" />
+              <div className="absolute bottom-1/4 -right-20 w-64 h-64 bg-neon/5 rounded-full blur-[100px]" />
             </div>
 
             {/* Header */}
@@ -118,7 +118,7 @@ export function Navbar() {
               <span className="font-bold text-white text-lg">Menu</span>
               <button
                 onClick={() => setMenuOpen(false)}
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-lime-400 hover:border-lime-400/30 transition-all"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-neon hover:border-neon/30 transition-all"
                 aria-label="Close menu"
               >
                 <X className="w-5 h-5" />
@@ -143,11 +143,11 @@ export function Navbar() {
                       <span className="text-zinc-600 font-mono text-sm">
                         0{index + 1}
                       </span>
-                      <span className="text-3xl font-bold text-white group-hover:text-lime-400 transition-colors">
+                      <span className="text-3xl font-bold text-white group-hover:text-neon transition-colors">
                         {item.label}
                       </span>
                     </div>
-                    <ArrowRight className="w-6 h-6 text-zinc-600 group-hover:text-lime-400 group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="w-6 h-6 text-zinc-600 group-hover:text-neon group-hover:translate-x-1 transition-all" />
                   </motion.button>
                 ))}
               </nav>
@@ -168,7 +168,7 @@ export function Navbar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setMenuOpen(false)}
-                    className="group inline-flex items-center gap-3 bg-lime-400 text-zinc-950 hover:bg-lime-300 font-semibold px-8 py-4 rounded-full transition-all duration-300"
+                    className="group inline-flex items-center gap-3 bg-neon text-zinc-950 hover:bg-neon-hover font-semibold px-8 py-4 rounded-full transition-all duration-300"
                   >
                     Book a Call
                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
