@@ -14,7 +14,7 @@ export function Footer() {
             href={socials.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-zinc-600 hover:text-lime-400 transition-colors"
+            className="text-zinc-600 hover:text-neon transition-colors"
             aria-label="GitHub"
           >
             <Github className="w-4 h-4" />
@@ -23,14 +23,14 @@ export function Footer() {
             href={socials.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-zinc-600 hover:text-lime-400 transition-colors"
+            className="text-zinc-600 hover:text-neon transition-colors"
             aria-label="LinkedIn"
           >
             <Linkedin className="w-4 h-4" />
           </a>
           <a
             href={`mailto:${socials.email}`}
-            className="text-zinc-600 hover:text-lime-400 transition-colors"
+            className="text-zinc-600 hover:text-neon transition-colors"
             aria-label="Email"
           >
             <Mail className="w-4 h-4" />
@@ -43,7 +43,7 @@ export function Footer() {
             href="https://calendly.com/davidhamilton473/el-salvador-consultation"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-zinc-500 hover:text-lime-400 transition-colors underline underline-offset-2"
+            className="text-zinc-500 hover:text-neon transition-colors underline underline-offset-2"
           >
             book a free consultation
           </a>

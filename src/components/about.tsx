@@ -38,13 +38,13 @@ export function About() {
     <section id="about" className="py-28 px-4">
       {/* Section heading */}
       <div className="text-center mb-16">
-        <span className="text-lime-400 font-mono text-sm tracking-widest uppercase">
+        <span className="text-neon font-mono text-sm tracking-widest uppercase">
           Why Work With Me
         </span>
         <h2 className="text-4xl md:text-5xl font-bold text-white mt-3">
           The Full Picture
         </h2>
-        <div className="w-20 h-1 bg-gradient-to-r from-transparent via-lime-400 to-transparent mx-auto mt-6 rounded-full" />
+        <div className="w-20 h-1 bg-gradient-to-r from-transparent via-neon to-transparent mx-auto mt-6 rounded-full" />
       </div>
 
       {/* Bio + Photo area */}
@@ -59,28 +59,22 @@ export function About() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <h3 className="text-white text-3xl md:text-[40px] font-semibold leading-tight md:leading-[53px]">
-              Marines to manufacturing
-              <br />
-              floors to writing code.
+              Soli Deo Gloria.
             </h3>
 
             <div className="text-zinc-400 text-sm md:text-[15px] leading-6 space-y-5">
-              <p>
-                Computer Science from Maryland, MS in IT Management from Georgetown.
-                I&apos;ve operated coil tubing rigs, scaled a trucking company from 1 to
-                8 trucks in the Bakken Shale, and built software for manufacturing
-                floors. Now based in El Salvador running American Iron — with access
-                to top-tier talent that means maximum value for every dollar you invest.
+              <p className="text-base md:text-lg leading-relaxed">
+                Marines. Oil fields. Software engineering. Now shipping full-stack platforms from El Salvador.
               </p>
 
               {/* Credential badges */}
-              <div className="flex flex-wrap gap-2 pt-2">
+              <div className="flex flex-wrap gap-2 pt-4">
                 {credentials.map((cred) => {
                   const Icon = cred.icon
                   return (
                     <span
                       key={cred.label}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-lime-400/10 border border-lime-400/20 text-lime-400 text-xs font-medium"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-neon/10 border border-neon/20 text-neon text-xs font-medium"
                     >
                       <Icon className="w-3 h-3" />
                       {cred.label}
@@ -93,14 +87,14 @@ export function About() {
 
           {/* Photo: PixelatedCanvas → Carousel on hover */}
           <motion.div
-            className="relative mx-auto w-full max-w-[340px] md:max-w-[420px]"
+            className="relative mx-auto w-full max-w-[380px] md:max-w-[480px]"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: true, amount: 0.2 }}
           >
             <div
-              className="relative w-full rounded-[32px] overflow-hidden border border-zinc-800/50 shadow-2xl shadow-lime-400/5 cursor-pointer"
+              className="relative w-full rounded-[32px] overflow-hidden border border-zinc-800/50 shadow-2xl shadow-neon/5 cursor-pointer"
               style={{ aspectRatio: "3 / 4" }}
               onClick={() => setShowCarousel((prev) => !prev)}
             >
@@ -132,7 +126,7 @@ export function About() {
                         jitterStrength={4}
                         jitterSpeed={4}
                         sampleAverage
-                        tintColor="#a3e635"
+                        tintColor="#00D4FF"
                         tintStrength={0.08}
                         responsive
                         className="w-full h-full rounded-[32px]"
@@ -142,7 +136,7 @@ export function About() {
                     {/* Hover hint */}
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-transparent px-5 pb-4 pt-16">
                       <div className="flex items-center gap-2 text-zinc-400 text-xs">
-                        <Eye className="w-3.5 h-3.5 text-lime-400" />
+                        <Eye className="w-3.5 h-3.5 text-neon" />
                         <span>Click to see the journey</span>
                       </div>
                     </div>

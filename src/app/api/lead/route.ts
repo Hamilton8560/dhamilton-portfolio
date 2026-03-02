@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
       to: "davidhamilton473@gmail.com",
       subject: `New Lead: ${name} — ${summary.slice(0, 60)}`,
       html: `
-        <h2 style="color:#a3e635;">New Lead from Portfolio Site</h2>
+        <h2 style="color:#00D4FF;">New Lead from Portfolio Site</h2>
         <table style="border-collapse:collapse;width:100%;max-width:600px;">
           <tr>
             <td style="padding:8px;font-weight:bold;color:#666;">Name</td>

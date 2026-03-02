@@ -497,8 +497,8 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
           --muted-border: rgba(229,231,235,0.14);
           --overlay-bg: rgba(8,8,12,0.55);
           --overlay-text: #ffffff;
-          --accent: #a3e635;
-          --accent-2: #84cc16;
+          --accent: #00D4FF;
+          --accent-2: #4D9FFF;
           --shadow: 0 12px 36px rgba(0,0,0,0.35);
 
           color-scheme: dark;

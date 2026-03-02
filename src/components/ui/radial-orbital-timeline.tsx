@@ -172,10 +172,10 @@ export default function RadialOrbitalTimeline({
             transform: `translate(${centerOffset.x}px, ${centerOffset.y}px)`,
           }}
         >
-          <div className="absolute w-16 h-16 rounded-full bg-gradient-to-br from-lime-500 via-lime-400 to-emerald-500 animate-pulse flex items-center justify-center z-10">
-            <div className="absolute w-20 h-20 rounded-full border border-lime-400/20 animate-ping opacity-70"></div>
+          <div className="absolute w-16 h-16 rounded-full bg-gradient-to-br from-neon via-neon to-neon-blue animate-pulse flex items-center justify-center z-10">
+            <div className="absolute w-20 h-20 rounded-full border border-neon/20 animate-ping opacity-70"></div>
             <div
-              className="absolute w-24 h-24 rounded-full border border-lime-400/10 animate-ping opacity-50"
+              className="absolute w-24 h-24 rounded-full border border-neon/10 animate-ping opacity-50"
               style={{ animationDelay: "0.5s" }}
             ></div>
             <div className="w-8 h-8 rounded-full bg-white/80 backdrop-blur-md"></div>
@@ -212,7 +212,7 @@ export default function RadialOrbitalTimeline({
                     isPulsing ? "animate-pulse duration-1000" : ""
                   }`}
                   style={{
-                    background: `radial-gradient(circle, rgba(163,230,53,0.2) 0%, rgba(163,230,53,0) 70%)`,
+                    background: `radial-gradient(circle, rgba(0, 212, 255,0.2) 0%, rgba(0, 212, 255,0) 70%)`,
                     width: `${item.energy * 0.5 + 40}px`,
                     height: `${item.energy * 0.5 + 40}px`,
                     left: `-${(item.energy * 0.5 + 40 - 40) / 2}px`,
@@ -225,17 +225,17 @@ export default function RadialOrbitalTimeline({
                   w-10 h-10 rounded-full flex items-center justify-center
                   ${
                     isExpanded
-                      ? "bg-lime-400 text-zinc-950"
+                      ? "bg-neon text-zinc-950"
                       : isRelated
-                      ? "bg-lime-400/50 text-zinc-950"
+                      ? "bg-neon/50 text-zinc-950"
                       : "bg-zinc-950 text-white"
                   }
                   border-2
                   ${
                     isExpanded
-                      ? "border-lime-400 shadow-lg shadow-lime-400/30"
+                      ? "border-neon shadow-lg shadow-neon/30"
                       : isRelated
-                      ? "border-lime-400 animate-pulse"
+                      ? "border-neon animate-pulse"
                       : "border-white/40"
                   }
                   transition-all duration-300 transform
@@ -250,15 +250,15 @@ export default function RadialOrbitalTimeline({
                   absolute top-12  whitespace-nowrap
                   text-xs font-semibold tracking-wider
                   transition-all duration-300
-                  ${isExpanded ? "text-lime-400 scale-125" : "text-white/70"}
+                  ${isExpanded ? "text-neon scale-125" : "text-white/70"}
                 `}
                 >
                   {item.title}
                 </div>
 
                 {isExpanded && (
-                  <Card className="absolute top-20 left-1/2 -translate-x-1/2 w-64 bg-zinc-950/90 backdrop-blur-lg border-zinc-700/50 shadow-xl shadow-lime-400/5 overflow-visible">
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-px h-3 bg-lime-400/50"></div>
+                  <Card className="absolute top-20 left-1/2 -translate-x-1/2 w-64 bg-zinc-950/90 backdrop-blur-lg border-zinc-700/50 shadow-xl shadow-neon/5 overflow-visible">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-px h-3 bg-neon/50"></div>
                     <CardHeader className="pb-2">
                       <div className="flex justify-between items-center">
                         <Badge
@@ -293,7 +293,7 @@ export default function RadialOrbitalTimeline({
                         </div>
                         <div className="w-full h-1 bg-zinc-800 rounded-full overflow-hidden">
                           <div
-                            className="h-full bg-gradient-to-r from-lime-500 to-emerald-500"
+                            className="h-full bg-gradient-to-r from-neon to-neon-blue"
                             style={{ width: `${item.energy}%` }}
                           ></div>
                         </div>
@@ -317,7 +317,7 @@ export default function RadialOrbitalTimeline({
                                   key={relatedId}
                                   variant="outline"
                                   size="sm"
-                                  className="flex items-center h-6 px-2 py-0 text-xs rounded-none border-zinc-700 bg-transparent hover:bg-lime-400/10 text-zinc-400 hover:text-lime-400 transition-all"
+                                  className="flex items-center h-6 px-2 py-0 text-xs rounded-none border-zinc-700 bg-transparent hover:bg-neon/10 text-zinc-400 hover:text-neon transition-all"
                                   onClick={(e) => {
                                     e.stopPropagation();
                                     toggleItem(relatedId);

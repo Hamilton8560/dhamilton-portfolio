@@ -41,7 +41,7 @@ export function Pricing() {
         {/* Header */}
         <div className="text-center mb-16">
           <motion.span 
-            className="text-lime-400 font-mono text-sm tracking-widest uppercase"
+            className="text-neon font-mono text-sm tracking-widest uppercase"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -68,7 +68,7 @@ export function Pricing() {
               key={tier.name}
               className={`relative rounded-2xl p-6 ${
                 tier.popular 
-                  ? "bg-lime-400 text-zinc-950" 
+                  ? "bg-neon text-zinc-950" 
                   : "bg-zinc-900/40 border border-zinc-800 text-white"
               }`}
               initial={{ opacity: 0, y: 30 }}
@@ -79,7 +79,7 @@ export function Pricing() {
               {/* Popular badge */}
               {tier.popular && (
                 <div className="absolute -top-3 left-6">
-                  <span className="inline-flex items-center gap-1.5 bg-zinc-950 text-lime-400 text-xs font-semibold px-3 py-1 rounded-full border border-lime-400/20">
+                  <span className="inline-flex items-center gap-1.5 bg-zinc-950 text-neon text-xs font-semibold px-3 py-1 rounded-full border border-neon/20">
                     <Sparkles className="w-3 h-3" />
                     Most Popular
                   </span>
@@ -124,7 +124,7 @@ export function Pricing() {
                 className={`group flex items-center justify-center gap-2 w-full py-3 rounded-full font-semibold transition-all duration-300 ${
                   tier.popular
                     ? "bg-zinc-950 text-white hover:bg-zinc-800"
-                    : "bg-lime-400 text-zinc-950 hover:bg-lime-300"
+                    : "bg-neon text-zinc-950 hover:bg-neon-hover"
                 }`}
               >
                 Get Started
@@ -147,7 +147,7 @@ export function Pricing() {
             href={socials.calendly}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lime-400 hover:underline"
+            className="text-neon hover:underline"
           >
             Book a free call
           </a>

@@ -42,7 +42,7 @@ export function AuroraBackground({ className, children }: AuroraBackgroundProps)
         className="absolute inset-0 opacity-[0.07] z-[2]"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(163, 230, 53, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(163, 230, 53, 0.3) 1px, transparent 1px)",
+            "linear-gradient(rgba(0, 212, 255, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 212, 255, 0.3) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
       />

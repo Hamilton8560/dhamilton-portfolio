@@ -78,7 +78,7 @@ const SectionWithMockup: React.FC<SectionWithMockupProps> = ({
                         {content ? (
                             /* Live content mode */
                             <motion.div
-                                className="relative w-full h-[405px] md:h-[637px] rounded-[32px] z-10 overflow-hidden border border-zinc-800/50 shadow-2xl shadow-lime-400/5"
+                                className="relative w-full h-[405px] md:h-[637px] rounded-[32px] z-10 overflow-hidden border border-zinc-800/50 shadow-2xl shadow-neon/5"
                                 initial={{ y: 0 }}
                                 whileInView={{ y: 20 }}
                                 transition={{ duration: 1.2, ease: "easeOut", delay: 0.1 }}

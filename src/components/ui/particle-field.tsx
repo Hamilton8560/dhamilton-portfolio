@@ -22,7 +22,7 @@ export function ParticleField({
   className,
   particleCount = 60,
   connectionDistance = 140,
-  color = [163, 230, 53],
+  color = [0, 212, 255],
 }: ParticleFieldProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 

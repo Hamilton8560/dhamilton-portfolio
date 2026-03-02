@@ -11,13 +11,13 @@ export function SplineAIShowcase() {
   return (
     <section id="ai-agents" className="py-28 px-4 relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(163,230,53,0.08)_0%,_transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(0, 212, 255,0.08)_0%,_transparent_60%)]" />
       
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section header */}
         <div className="text-center mb-12">
           <motion.span 
-            className="text-lime-400 font-mono text-sm tracking-widest uppercase inline-flex items-center gap-2"
+            className="text-neon font-mono text-sm tracking-widest uppercase inline-flex items-center gap-2"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -41,8 +41,7 @@ export function SplineAIShowcase() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            AI agents that handle sales, support, taxes, and lead generation — 
-            all running 24/7 while you focus on growing your business.
+            AI agents running sales, support, and automation 24/7.
           </motion.p>
         </div>
 
@@ -54,16 +53,16 @@ export function SplineAIShowcase() {
           transition={{ duration: 0.6 }}
           className="hidden md:block"
         >
-          <div className="w-full h-[600px] bg-zinc-950/[0.96] relative overflow-hidden rounded-3xl">
+          <div className="w-full h-[700px] bg-zinc-950/[0.96] relative overflow-hidden rounded-3xl">
             <Spotlight
               className="-top-40 left-0 md:left-60 md:-top-20"
-              fill="#a3e635"
+              fill="#00D4FF"
             />
             
             <div className="flex h-full flex-row">
               {/* Left content */}
               <div className="flex-1 p-10 relative z-10 flex flex-col justify-center">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-lime-400/10 border border-lime-400/20 text-lime-400 text-xs font-mono mb-6 w-fit">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-neon/10 border border-neon/20 text-neon text-xs font-mono mb-6 w-fit">
                   <Zap className="w-3 h-3" />
                   Now Available
                 </div>
@@ -72,9 +71,7 @@ export function SplineAIShowcase() {
                   AI That Works While You Sleep
                 </h3>
                 <p className="mt-4 text-neutral-400 max-w-md leading-relaxed">
-                  Imagine a Telegram bot that answers customer questions, books appointments, 
-                  processes payments, and files your taxes — all automatically. 
-                  This isn't the future. This is what we build today.
+                  Telegram and WhatsApp bots that answer questions, book appointments, and process payments — automatically.
                 </p>
                 
                 <ul className="mt-6 space-y-3">
@@ -84,23 +81,19 @@ export function SplineAIShowcase() {
                     { icon: Zap, text: "Process Automation — never miss a deadline" },
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-neutral-300 text-sm">
-                      <div className="p-1.5 rounded-lg bg-lime-400/10">
-                        <item.icon className="w-4 h-4 text-lime-400" />
+                      <div className="p-1.5 rounded-lg bg-neon/10">
+                        <item.icon className="w-4 h-4 text-neon" />
                       </div>
                       {item.text}
                     </li>
                   ))}
                 </ul>
 
-                <p className="mt-4 text-xs text-zinc-500">
-                  We advise on the best AI for your use case — whether that's Claude, OpenAI, Minimax, Kimi, or the latest frontier models.
-                </p>
-
                 <a
                   href={socials.calendly}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group mt-8 inline-flex items-center gap-2 bg-lime-400 text-zinc-950 hover:bg-lime-300 font-semibold px-6 py-3 rounded-full transition-all duration-300 w-fit"
+                  className="group mt-8 inline-flex items-center gap-2 bg-neon text-zinc-950 hover:bg-neon-hover font-semibold px-6 py-3 rounded-full transition-all duration-300 w-fit"
                 >
                   Build Your AI Agent
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -133,7 +126,7 @@ export function SplineAIShowcase() {
             </div>
             
             <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-lime-400/10 border border-lime-400/20 text-lime-400 text-xs font-mono mb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-neon/10 border border-neon/20 text-neon text-xs font-mono mb-4">
                 <Zap className="w-3 h-3" />
                 Now Available
               </div>
@@ -142,8 +135,7 @@ export function SplineAIShowcase() {
                 AI That Works While You Sleep
               </h3>
               <p className="mt-3 text-neutral-400 text-sm leading-relaxed">
-                A Telegram bot that answers questions, books appointments, 
-                processes payments, and files taxes — automatically.
+                Bots that answer questions, book appointments, and process payments — automatically.
               </p>
               
               {/* Mobile feature grid */}
@@ -162,21 +154,17 @@ export function SplineAIShowcase() {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
                   >
-                    <item.icon className="w-4 h-4 text-lime-400" />
+                    <item.icon className="w-4 h-4 text-neon" />
                     <span className="text-neutral-300 text-xs font-medium">{item.text}</span>
                   </motion.div>
                 ))}
               </div>
 
-              <p className="mt-4 text-xs text-zinc-500 text-center">
-                We advise on the best AI for your use case — Claude, OpenAI, Minimax, Kimi, or the latest frontier models.
-              </p>
-
               <a
                 href={socials.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group mt-6 inline-flex items-center justify-center gap-2 bg-lime-400 text-zinc-950 hover:bg-lime-300 font-semibold px-6 py-3 rounded-full transition-all duration-300 w-full"
+                className="group mt-6 inline-flex items-center justify-center gap-2 bg-neon text-zinc-950 hover:bg-neon-hover font-semibold px-6 py-3 rounded-full transition-all duration-300 w-full"
               >
                 Build Your AI Agent
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -194,15 +182,15 @@ export function SplineAIShowcase() {
           transition={{ delay: 0.4 }}
         >
           <span className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-neon animate-pulse" />
             Model-agnostic architecture
           </span>
           <span className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-neon animate-pulse" />
             Telegram & WhatsApp Integration
           </span>
           <span className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-neon animate-pulse" />
             Custom-trained on your business
           </span>
         </motion.div>

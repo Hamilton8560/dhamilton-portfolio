@@ -203,14 +203,14 @@ export function AiDashboardMockup() {
       {/* Title bar */}
       <div className="flex items-center justify-between px-4 md:px-5 py-3 md:py-3.5 border-b border-zinc-800/80 shrink-0">
         <div className="flex items-center gap-2">
-          <div className="p-1 md:p-1.5 rounded-md bg-lime-400/10">
-            <Bot className="w-3 h-3 md:w-3.5 md:h-3.5 text-lime-400" />
+          <div className="p-1 md:p-1.5 rounded-md bg-neon/10">
+            <Bot className="w-3 h-3 md:w-3.5 md:h-3.5 text-neon" />
           </div>
           <span className="font-semibold text-white text-[11px] md:text-sm tracking-tight">
             AI Agent Hub
           </span>
         </div>
-        <Badge className="bg-lime-400/10 text-lime-400 border-lime-400/20 text-[9px] md:text-[10px] px-1.5 md:px-2 py-0.5">
+        <Badge className="bg-neon/10 text-neon border-neon/20 text-[9px] md:text-[10px] px-1.5 md:px-2 py-0.5">
           <CircleDot className="w-2 h-2 md:w-2.5 md:h-2.5 mr-1 animate-pulse" />
           3 Active
         </Badge>
@@ -249,16 +249,16 @@ export function AiDashboardMockup() {
               <CardHeader className="px-3 py-2 md:px-3.5 md:py-2.5 pb-0 space-y-0">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
-                    <Icon className="w-3 h-3 md:w-3.5 md:h-3.5 text-lime-400" />
+                    <Icon className="w-3 h-3 md:w-3.5 md:h-3.5 text-neon" />
                     <span className="font-medium text-white text-[10px] md:text-xs">{agent.name}</span>
                   </div>
                   {isComplete ? (
-                    <span className="flex items-center gap-0.5 text-emerald-400 text-[9px] md:text-[10px]">
+                    <span className="flex items-center gap-0.5 text-neon-blue text-[9px] md:text-[10px]">
                       <CheckCircle2 className="w-2.5 h-2.5" />
                       Done
                     </span>
                   ) : (
-                    <span className="flex items-center gap-0.5 text-lime-400 text-[9px] md:text-[10px]">
+                    <span className="flex items-center gap-0.5 text-neon text-[9px] md:text-[10px]">
                       <CircleDot className="w-2.5 h-2.5 animate-pulse" />
                       Running
                     </span>
@@ -269,15 +269,15 @@ export function AiDashboardMockup() {
                 <p className="text-zinc-500 text-[9px] md:text-[10px] mb-1.5 transition-opacity duration-300">
                   {currentTask}
                   {!isComplete && (
-                    <span className="inline-block w-[3px] h-[10px] bg-lime-400/70 ml-0.5 align-middle animate-blink" />
+                    <span className="inline-block w-[3px] h-[10px] bg-neon/70 ml-0.5 align-middle animate-blink" />
                   )}
                 </p>
                 <div className="w-full h-1 md:h-1.5 bg-zinc-800 rounded-full overflow-hidden">
                   <div
                     className={`h-full rounded-full transition-all duration-500 ease-out ${
                       isComplete
-                        ? "bg-emerald-500"
-                        : "bg-gradient-to-r from-lime-500 to-emerald-500"
+                        ? "bg-neon-blue"
+                        : "bg-gradient-to-r from-neon to-neon-blue"
                     }`}
                     style={{ width: `${progress}%` }}
                   />
@@ -310,9 +310,9 @@ export function AiDashboardMockup() {
               <span className="text-zinc-600 font-mono shrink-0">
                 {activityMessages[typingLogIndex].time}
               </span>
-              <span className="text-lime-400/80 truncate">
+              <span className="text-neon/80 truncate">
                 {typingText}
-                <span className="inline-block w-[3px] h-[10px] bg-lime-400/70 ml-px align-middle animate-blink" />
+                <span className="inline-block w-[3px] h-[10px] bg-neon/70 ml-px align-middle animate-blink" />
               </span>
             </div>
           )}
